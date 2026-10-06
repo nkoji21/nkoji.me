@@ -11,4 +11,4 @@ export const SITE_AUTHOR = {
 
 /** 記事の「編集を提案」リンク先 */
 export const CONTENT_REPO_EDIT_BASE =
-  "https://github.com/nkoji21/nkoji/edit/main/content/blog";
+  "https://github.com/nkoji21/nkoji.me/edit/main/content/blog";
