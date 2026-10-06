@@ -103,7 +103,7 @@
     select,
     [contenteditable] {
       cursor:
-        url("/cursor-default.svg") 1 1,
+        url("/cursor-default.svg") 0 0,
         default;
     }
   }
