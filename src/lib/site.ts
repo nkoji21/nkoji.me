@@ -2,7 +2,6 @@ export const SITE_URL = "https://www.nkoji.me";
 
 export const SITE_AUTHOR = {
   name: "Naoki Kojima",
-  /** 文の途中で折り返らないよう、文ごとに分けて改行する */
   bio: [
     "デザインが好きなソフトウェアエンジニア。",
     "Webを中心にプロダクトをつくっています。",
