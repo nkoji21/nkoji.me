@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { IconArrowUpRight, IconCaretRight } from "@/components/icons";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { PeekChara } from "@/components/ui/peek-chara";
@@ -8,19 +7,11 @@ import { SoundLink } from "@/components/ui/sound-link";
 
 export const metadata: Metadata = {
   title: "Activity",
-  description: "仕事や学びなど、これまでやってきたことの記録。",
+  description: "学校やインターン、OSS など、これまでやってきたことの記録。",
 };
 
-/** プロダクト名は出さない（契約で委託業務として特定されているため） */
+/** 業務委託・受託の取引先は載せない（読み手に「自社も載る」と思わせないため） */
 const ACTIVITIES = [
-  {
-    period: "2026.06 –",
-    name: "株式会社Autest",
-    href: "https://www.autest.co.jp/",
-    role: "業務委託 · ソフトウェアエンジニア",
-    isOngoing: true,
-    body: "テスト自動化プロダクトの立ち上げに参加しています。",
-  },
   {
     period: "2026.03 –",
     name: "Yamada UI",
@@ -28,25 +19,6 @@ const ACTIVITIES = [
     role: "OSS · メンテナー",
     isOngoing: true,
     body: "OSS のメンテナーになりました。",
-  },
-  {
-    period: "2026.02 – 2026.07",
-    name: "株式会社StepAI",
-    href: "https://www.stepai.co.jp/",
-    role: "業務委託 · フロントエンド / デザイン",
-    isOngoing: false,
-    body: "音声AIプロダクトのフロントエンドをつくっていました。",
-  },
-  {
-    period: "2025.12",
-    name: "麻雀アプリの OGP 画像",
-    role: "受託 · グラフィックデザイン",
-    isOngoing: false,
-    body: "対局結果をシェアするための OGP 画像をデザインしました。",
-    image: {
-      src: "/activity/mahjong-ogp.webp",
-      alt: "対局結果の OGP 画像。1位から4位までの順位・スコア・増減が並んでいる",
-    },
   },
   {
     period: "2025.10 – 2026.02",
@@ -198,10 +170,7 @@ export default function ActivityPage() {
 
               <ul className="mt-3.5">
                 {items.map(
-                  (
-                    { period, name, href, role, isOngoing, body, image },
-                    index,
-                  ) => (
+                  ({ period, name, href, role, isOngoing, body }, index) => (
                     <li key={name} className="flex gap-4">
                       {/* 左のレール。ドットは日付行に合わせる */}
                       <div
@@ -248,17 +217,6 @@ export default function ActivityPage() {
                           </p>
                           <p className="mt-2 text-xs">{role}</p>
                           <p className="mt-2 text-sm leading-relaxed">{body}</p>
-
-                          {image ? (
-                            <Image
-                              src={image.src}
-                              alt={image.alt}
-                              width={1200}
-                              height={630}
-                              sizes="(min-width: 48rem) 28rem, 100vw"
-                              className="mt-3 h-auto w-full max-w-112 rounded-xl border border-line"
-                            />
-                          ) : null}
                         </Card>
                       </div>
                     </li>
